@@ -1,0 +1,51 @@
+ {% extends "inicio/encabezado.html" %}
+{%block titulo%}Contacto{%endblock%}
+{%block informacion%}Contacto{%endblock%}
+{% load static %}
+{% block user_menu %} {%static 'inicio/images/contacto.png'%}{% endblock %}
+
+ {% block contenido %}
+
+ <!-- Contenido Principal-->
+
+			<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Contacto
+				    <small>Informacion</small></h3>
+				</div>
+			</div>
+			<!-- /Encabezado-->
+
+{%endblock%}
+
+{%block contenido2%}
+			<form class="form-horizontal" action="{% url 'Registrar' %}" method="POST">
+                {% csrf_token %}
+	            <div class="panel panel-default">
+	                <div class="panel-body">
+				        
+				        <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Usuario:</label>
+				            <div class="col-sm-10">
+				            	<input name="usuario" type="text" class="form-control">
+				            </div>
+				        </div>
+
+                <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Comentario:</label>
+				            <div class="col-sm-10">
+				            	<input type="text" class="form-control">
+				            </div>
+				        </div>
+
+						<div class="form-actions text-right">
+                        	<input type="submit" value="Enviar" class="btn btn-primary">
+                        </div>
+
+				    </div>
+				</div>
+			</form>
+		<!-- /Contenido Principal-->
+
+ {% endblock %}
