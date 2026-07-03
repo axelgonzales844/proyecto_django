@@ -1,0 +1,48 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %}Consultar Comentarios{% endblock %}
+{% block informacion %}Comentarios{% endblock %}
+{% load static %}
+{% block user_menu %}{% static 'inicio/images/comentario.png' %}{% endblock %}
+
+{% block contenido %}
+<div class="page-header">
+    <div class="page-title">
+        <h3>Comentarios
+        <small>Lista de comentarios registrados </small></h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block contenido2 %}
+<div class="panel panel-default">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Mensaje</th>
+                    <th class="text-center" style="width: 80px;">Editar</th>
+                    <th class="text-center" style="width: 80px;">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comentario in comentarios %}
+                <tr>
+                    <td class="text-semibold">{{ comentario.usuario }}</td>
+                    <td class="muted">{{ comentario.mensaje }}</td>
+                    
+                    <td class="text-center">
+                        <a href="#" class="btn btn-primary btn-xs">Editar</a>
+                    </td>
+                    
+                    <td class="text-center">
+                        <a href="#" class="btn btn-danger btn-xs">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

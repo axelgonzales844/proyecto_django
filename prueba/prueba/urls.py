@@ -26,6 +26,7 @@ urlpatterns = [
     path('contacto/', views_registros.contacto, name='Contacto'),
     path('formulario/', views.formulario, name='Formulario'),
     path('registrar/', views_registros.registrar, name='Registrar'),
+    path('consultarComentario/', views_registros.consultarComentario, name='consultarComentario'),
 ]
 
 if settings.DEBUG:
